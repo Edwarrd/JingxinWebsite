@@ -1,0 +1,57 @@
+{% extends "_frame.html" %}
+
+{% block main %}
+<script>
+    $(function () {
+        $('#signinForm').submit(function (e) {
+            e.preventDefault();
+            var data = {
+                name: $('#name').val(),
+                password: $('#password').val()
+            };
+            $.ajax({
+                type: 'POST',
+                url: '/signin',
+                data: JSON.stringify(data),
+                success: function (resp) {
+                    if (resp.error) {
+                        $('#error').text(resp.error);
+                    } else {
+                        location.assign('/');
+                    }
+                },
+                contentType: 'application/json',
+                dataType: 'json'
+            });
+        });
+    });
+</script>
+<!-- 内容主体区域 -->
+  <!--9/12-->
+<div class="layui-card">
+  <div class="layui-card-header" style="font-size: 25px; padding: 2%;">登录</div>
+  <div class="layui-card-body">
+    <form id="signinForm" class="layui-form" style="font-size: 15px; padding-top: 1%;">
+        <div class="layui-form-item">
+        <p id="error" class="text-danger"></p>
+        </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">登录名称</label>
+        <div class="layui-input-inline">
+          <input id="name" type="text" name="title" required lay-verify="required" placeholder="登录名称或邮箱或手机号" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">密码</label>
+        <div class="layui-input-inline">
+          <input id="password" type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div style="padding:30px; text-align: center;">
+        <button type="submit" class="layui-btn layui-btn-radius layui-btn-primary layui-btn-fluid layui-border-blue">登录</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

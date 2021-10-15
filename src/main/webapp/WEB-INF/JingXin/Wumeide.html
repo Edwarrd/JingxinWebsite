@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>静坐冥想修行故事页</title>
+  <link rel="stylesheet" href="./layui/css/layui.css">
+  <link rel="stylesheet" href="css/test.css">
+  <link rel="stylesheet" href="./global.css">
+  <script src="./jquery-3.6.0.js">
+  </script>
+</head>
+<body>
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header" style="background-color:rgba(202, 234, 247, 0.897);">
+    <div class="layui-logo layui-hide-xs" style="font-size: 20px; color: rgb(49, 58, 61);">护心网-五美德</div>
+    <!-- 头部区域（可配合layui 已有的水平导航） -->
+    <ul class="layui-nav layui-layout-left">
+      <!-- 移动端显示 -->
+      <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
+        <i class="layui-icon layui-icon-spread-left"></i>
+      </li>
+      
+      <li class="layui-nav-item layui-hide-xs layui-this"><a href="Intro-1.html" style="font-size: 18px; color: black;">背景信息</a></li>
+      <li class="layui-nav-item layui-hide-xs"><a href="Activity-1.html" style="font-size: 18px; color: black;">项目内容</a></li>
+      <li class="layui-nav-item layui-hide-xs"><a href="Exp-1.html" style="font-size: 18px; color: black;">心得</a></li>
+      <li class="layui-nav-item layui-hide-xs"><a href="Discuss-1.html" style="font-size: 18px; color: black;">讨论</a></li>
+      <li class="layui-nav-item layui-hide-xs"><a href="Story-1.html" style="font-size: 18px; color: black;">修行故事</a></li>
+      <li class="layui-nav-item layui-hide-xs"><a href="" style="font-size: 18px; color: black;">公告<span class="layui-badge">6</span></a></li>
+      <!-- <li class="layui-nav-item">
+        <a href="javascript:;">nav groups</a>
+        <dl class="layui-nav-child">
+          <dd><a href="">menu 11</a></dd>
+          <dd><a href="">menu 22</a></dd>
+          <dd><a href="">menu 33</a></dd>
+        </dl>
+      </li> -->
+    </ul>
+    <ul class="layui-nav layui-layout-right">
+      <!--登录完成状态-->
+      <li class="layui-nav-item">
+        <a href="Msg-1.html" style="font-size: 18px; color: black;">消息<span class="layui-badge-dot"></span></a>
+      </li>
+      <li class="layui-nav-item layui-hide layui-show-md-inline-block">
+        <a href="javascript:;" style="font-size: 18px; color: black;">
+          <img src="./logotest.webp" class="layui-nav-img">我
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="Account.html">Profile</a></dd>
+          <dd><a href="">Settings</a></dd>
+          <dd><a href="">Sign out</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+        <a href="javascript:;">
+          <i class="layui-icon layui-icon-more-vertical"></i>
+        </a>
+      </li>
+
+      <!--未登录状态-->
+      <!-- <li class="layui-nav-item">
+        <a href="./user/login.html">登入</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="./user/reg.html">注册</a>
+      </li> -->
+
+    </ul>
+  </div>
+  
+  <div class="layui-side" style="background-color: rgba(202, 234, 247, 0.897);">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree" style="background-color: rgba(202, 234, 247, 0.897);">
+        <li class="layui-nav-item">
+          <a class="layui-font-black" href="javascript:;" style="font-size: 18px;">五美德</a>
+          <!-- <dl class="layui-nav-child" >
+            <dd><a href="javascript:;">1</a></dd>
+            <dd><a href="javascript:;">2</a></dd>
+            <dd><a href="javascript:;">3</a></dd>
+            <dd><a href="javascript:;">4</a></dd>
+            <dd><a href="javascript:;">5</a></dd>
+          </dl> -->
+        </li>
+        <!-- <li class="layui-nav-item">
+          <a href="javascript:;">menu group 2</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">list 1</a></dd>
+            <dd><a href="javascript:;">list 2</a></dd>
+            <dd><a href="">超链接</a></dd>
+          </dl>
+        </li> -->
+        <li class="layui-nav-item"><a href="" style="font-size: 18px; color: #000;">瑜伽</a></li>
+        <li class="layui-nav-item"><a href="" style="font-size: 18px; color: #000;">中医养生</a></li>
+        <li class="layui-nav-item">
+          <a class="" href="javascript:;" style="font-size: 18px; color: #000;">有机食品</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">有机食品1</a></dd>
+            <dd><a href="javascript:;">有机食品2</a></dd>
+            <dd><a href="javascript:;">有机食品3</a></dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="layui-body" style="background-color:#eefafd;">
+    <!-- 内容主体区域 -->
+      <div style="padding: 30px; padding-left: 50px; padding-top: 0px; font-size: 20px; line-height: 2;">
+        <br id="Background">
+        <hr>
+        <h1 style="text-align: center;">背景信息</h1>
+        <h2 style="text-align: center;">一、缘起</h2>
+        <p>现代社会，随着物质资源越来越丰富精美，人们对物质和感官享受的欲望被唤起刺激，甚至泛滥。尤其是还不具有辨别能力的孩子们，享受着优越丰富的物质资源的同时，也被各种各样的电子产品、娱乐方式所诱惑，没能养成良好的生活习惯，也不易具备照顾自己的生活能力。不健康的作息时间，沉迷于网络，活动量不够等等，往往导致脊椎侧弯、颈椎提前老化、注意力不集中、心理承受能力弱、沉溺于自我世界等生理与心理问题。</p>
+        <p>作为父母、作为教育工作者，我们很希望能够做一些什么。于是，在参考借鉴国内外科学研究以及教育实践的基础上，我们推出了本项目。我们希望通过本活动，帮助孩子们养成良好习惯，提高生活能力，改善身心健康，以便他们能在现代社会激烈的竞争中照顾好自己的身心，抵抗住来自各方面的压力与诱惑，成长为一个能自立、快乐和有益他人与社会的人。</p>
+        <h2 style="text-align: center;">二、愿景与目标</h2>
+        <p>通过本活动，参与者将得以训练三项基本素质与能力：尊敬、自律与忍耐。若能坚持这些好习惯与优良素质，也最终必能成长为自立的人、快乐的人、有益的人。</p>
+        <h2 style="text-align: center;">三、参与条件</h2>
+        <p>本活动具有极高的包容性和可行性，以国际性道德价值观为基础，不分种族、宗教，皆可适用。</p>
+        <p>整个活动的设计虽然以学习为主，却不与学校的进度发生冲突，故参与活动的学生们没有额外的学习压力；而且有利于促进学生的学习习惯与效率，更可以提升学习者的内在力量与智慧。</p>
+        <p>因此，我们诚邀公立私立学校、校外培训机构、私塾学堂等教育团体的加入，以促进学生的全面综合素质的提高，既符合推行素质教育的国策，又可在执行政府减负新政前提下，稳步有效推进贵机构的良性发展与收益，为国家和社会培养品行良善、能力完备、身心健康的新时代接班人。</p>
+        <h2 style="text-align: center;">四、实施要求</h2>
+        <p>1.家庭的配合</p>
+        <p>在孩子的成长过程中，孩子、父母与老师是最直接的有意识参与者。青少年好习惯的养成，需要这三组人士相互合作，在日常生活与学习中彼此配合协作，引导并帮助年轻一代发掘内在的力量、智慧与美善，培养健全的人格。</p>
+        <p>2.愿意提升的心</p>
+        <p>你们已经准备好成为一个自立、快乐和有益之人了吗？</p>
+        <p>如果是的话，你们将会成为让自己的家庭与国家真正幸福、快乐的活水源头。</p>
+        <p>3.对简单美好习惯的践行</p>
+        <p>本活动中，您不需要购买精美的教材和昂贵的电子设备或网络课程，您只需要实践各种朴素而美好的言行。</p>
+        <p>您的每一个善好言行，都将为您带来新发现。</p>
+        <p>这条路上充满了奇迹，让您了解自己、了解他人，了解爱，也懂得怎样去爱自己与爱他人；更让您在素简的日常中不断提升，并收获身心的宁静与力量。就让我们一起踏上这次自我探索与实践之旅吧！</p>
+        <br id="Project">
+        <hr>
+        <h1 style="text-align: center;">项目内容</h1>
+        <p>源自麦克斯维尔博士的“21天焕然一新”研究证明，某个行为一旦被重复21天，这个行为就会变成习惯。</p>
+        <p>21天，养成好习惯，发掘出内在的力量与智慧，把真正美好的您还给您自己！</p>
+        <h2 style="text-align: center;">一、培训目标</h2>
+        <p>培养能改善与圆满生命的五个“超能力”。</p>
+        <p>1.清洁</p>
+        <p>保持身体、衣着和房间等外在环境的清洁。</p>
+        <p>意义：看到的、想到的都清洁干净，有助于保持最重要的心灵内在清洁！</p>
+        <p>2.整齐</p>
+        <p>将私人用品和学习用品如书本、玩具、衣服等物件收放整齐；学习遵守学校、家庭及社会的所有规定，如按场合要求排队等。</p>
+        <p>意义：节省时间、空间，避免耗费不必要的精力和能量。</p>
+        <p>3.礼貌</p>
+        <p>礼貌、友善地与人相处；以正确的态度和方式使用一切用具。</p>
+        <p>意义：促进人与人的友好协作，促进人与物品、自然的和谐共处。</p>
+        <p>4.守时</p>
+        <p>日常生活中一切与时间有关的事情都要守时。</p>
+        <p>如准时上学、上班、完成作业等。</p>
+        <p>意义：不浪费自己与他人时间，提高效率，建立信用，促进所有事务顺利开展。</p>
+        <p>5.静坐</p>
+        <p>练习静坐，松弛神经，增进觉知，充实内心。</p>
+        <p>意义：增强内在正能量，并培养耐心、宽容心和慈悲心，从而增强心力，能智慧应对或解决学习和生活中遇到的种种现象与问题。</p>
+        <h2 style="text-align: center;">二、培训场所</h2>
+        <p>与我们每日生活息息相关的场所有：卧室、浴室、客厅、饭厅、教室或办公室。这些就是我们进行培训与养成好习惯的场所。</p>
+        <h2 style="text-align: center;">三、培训内容</h2>
+        <p>本活动如何帮助养成好习惯？</p>
+        <p>我们设计了需每日必做的10项功课，这10项功课在上述场所中进行，用以在青少年心中播撒好习惯的种子。正确而持之以恒地做下去，种子必定会茁壮成长为好习惯。</p>
+        <p>已有的参与者证实：练习10项日常功课后，孩子和父母的关系变好了，孩子在学校与教师的互动也增多了。教师们都说，参加了活动的学生们，无论是成绩、待人人处事态度还是同学关系，都有了极大的改善。参加了活动的学生们自己也说，他们感到更自信、更开朗、更快乐，而且更自律、更懂得尊重他人。</p>
+        <br id="Develop">
+        <hr>
+        <h1 style="text-align: center;">发展历程</h1>
+        <p>第一阶段 初步试行</p>
+        <p>2019年1月至2020年12月，我们一直在学习、考察、思考和积累中。</p>
+        <p>2020年12月至2021年7月，开始在朋友的私立学堂试行。</p>
+        <p>初步试行（一）</p>
+        <p>首先试行的是北京某私立学堂。2020年12月中旬开始，我们用2周的时间一边帮助学堂改造陈旧杂乱的环境，一边带领师生养成清洁、整齐与静坐的好习惯，使学堂的环境与气氛焕然一新。2021年1月1日的新年茶话会上，学生与家长对学堂的新变化给予了高度评价，师生与家长都表达了对学堂未来的期待与向往。</p>
+        <p>初步试行（二）</p>
+        <p>2021年7月，又在北京另一私立学堂继续试行。经过2周改造后，学堂环境明显改善，得到了家长的高度认可，同时静坐等内容也引起了家长们的极大兴趣。</p>
+        <p>第二阶段 试推广阶段</p>
+        <p>2021年7月末，为了减轻学生与家长的作业负担和经济负担，强化与完善国民教育体系，双减政策公布。为响应新时期国家关于培养青少年良好素质的新国策，我们进一步完善培训内容，并计划将本活动进一步推广。</p>
+        <p>我们愿与各个公立私立教育机构和团体充分合作，聚焦青少年生活能力、思维能力、智慧水平与内心力量的培养，配合教育新政，辅助国民教育体系良性运行，致力于培养自立、快乐和有益的新时代中国人。</p>
+        <br id="Evaluation">
+        <hr>
+        <h1 style="text-align: center;">项目合作成果评定标准</h1>
+        <p>一、评定人：本活动项目团队。</p>
+        <p>二、评定内容：包括清洁、整齐、礼貌、守时、静坐五个方面。</p>
+        <p>三、评定级别：一星到五星，每个方面满分100分，每20分一颗星。</p>
+        <p> 每个方面的每个小项达到90分以上，可定为示范单位。</p>
+        <p>四、评定时间：每月月底，星级根据最新评定结果可升或降。</p>
+        <p>五、评分标准：</p>
+        
+  </div>
+</div>
+
+
+<script src="./layui/layui.js"></script>
+<script>
+//JS 
+layui.use(['jquery','element', 'layer', 'util', 'laydate'], function(){
+  var element = layui.element
+  ,layer = layui.layer
+  ,util = layui.util
+  ,laydate = layui.laydate
+  ,$ = layui.$;
+  
+  //日历
+  laydate.render({
+    elem: '#calender'
+    ,position: 'static'
+  });
+
+  //头部事件
+  util.event('lay-header-event', {
+    //左侧菜单事件
+    menuLeft: function(othis){
+      layer.msg('展开左侧菜单的操作', {icon: 0});
+    }
+    ,menuRight: function(){
+      layer.open({
+        type: 1
+        ,content: '<div style="padding: 15px;">处理右侧面板的操作</div>'
+        ,area: ['260px', '100%']
+        ,offset: 'rt' //右上角
+        ,anim: 5
+        ,shadeClose: true
+      });
+    }
+  });
+  
+});
+</script>
+</body>
+</html>
+      

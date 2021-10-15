@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>静坐冥想心得页</title>
+  <link rel="stylesheet" href="./layui/css/layui.css">
+  <link rel="stylesheet" href="css/test.css">
+  <link rel="stylesheet" href="./global.css">
+  <script src="./jquery-3.6.0.js">
+  </script>
+</head>
+<body>
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header" style="background-color:rgba(202, 234, 247, 0.897);">
+    <div class="layui-logo layui-hide-xs" style="font-size: 20px; color: rgb(49, 58, 61);">护心网-静坐冥想</div>
+    <!-- 头部区域（可配合layui 已有的水平导航） -->
+    <ul class="layui-nav layui-layout-left">
+      <!-- 移动端显示 -->
+      <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
+        <i class="layui-icon layui-icon-spread-left"></i>
+      </li>
+      
+      <li class="layui-nav-item layui-hide-xs"><a href="FrontPage-1.html" style="font-size: 18px; color: black;">首页</a></li>
+      <li class="layui-nav-item layui-hide-xs"><a href="Intro-1.html" style="font-size: 18px; color: black;">介绍</a></li>
+      <li class="layui-nav-item layui-hide-xs"><a href="Activity-1.html" style="font-size: 18px; color: black;">活动</a></li>
+      <li class="layui-nav-item layui-hide-xs layui-this"><a href="" style="font-size: 18px; color: black;">心得</a></li>
+      <li class="layui-nav-item layui-hide-xs"><a href="Discuss-1.html" style="font-size: 18px; color: black;">讨论</a></li>
+      <li class="layui-nav-item layui-hide-xs"><a href="Story-1.html" style="font-size: 18px; color: black;">修行故事</a></li>
+      <li class="layui-nav-item layui-hide-xs"><a href="" style="font-size: 18px; color: black;">公告<span class="layui-badge">6</span></a></li>
+      <!-- <li class="layui-nav-item">
+        <a href="javascript:;">nav groups</a>
+        <dl class="layui-nav-child">
+          <dd><a href="">menu 11</a></dd>
+          <dd><a href="">menu 22</a></dd>
+          <dd><a href="">menu 33</a></dd>
+        </dl>
+      </li> -->
+    </ul>
+    <ul class="layui-nav layui-layout-right">
+      <!--登录完成状态-->
+      <li class="layui-nav-item">
+        <a href="Msg-1.html" style="font-size: 18px; color: black;">消息<span class="layui-badge-dot"></span></a>
+      </li>
+      <li class="layui-nav-item layui-hide layui-show-md-inline-block">
+        <a href="javascript:;" style="font-size: 18px; color: black;">
+          <img src="./logotest.webp" class="layui-nav-img">我
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="Account.html">Profile</a></dd>
+          <dd><a href="">Settings</a></dd>
+          <dd><a href="">Sign out</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+        <a href="javascript:;">
+          <i class="layui-icon layui-icon-more-vertical"></i>
+        </a>
+      </li>
+
+      <!--未登录状态-->
+      <!-- <li class="layui-nav-item">
+        <a href="./user/login.html">登入</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="./user/reg.html">注册</a>
+      </li> -->
+
+    </ul>
+  </div>
+  
+  <div class="layui-side" style="background-color: rgba(202, 234, 247, 0.897);">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree" style="background-color: rgba(202, 234, 247, 0.897);">
+        <li class="layui-nav-item"><a class="layui-font-black" href="javascript:;" style="font-size: 18px;">五美德</a></li>
+        <!-- <li class="layui-nav-item">
+          <a href="javascript:;">menu group 2</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">list 1</a></dd>
+            <dd><a href="javascript:;">list 2</a></dd>
+            <dd><a href="">超链接</a></dd>
+          </dl>
+        </li> -->
+        <li class="layui-nav-item"><a href="" style="font-size: 18px; color: #000;">瑜伽</a></li>
+        <li class="layui-nav-item"><a href="" style="font-size: 18px; color: #000;">中医养生</a></li>
+        <li class="layui-nav-item"><a class="" href="javascript:;" style="font-size: 18px; color: #000;">有机食品</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="layui-body" style="background-color:#eefafd;">
+    <!-- 内容主体区域 -->
+    <div class="layui-row">
+      <!--9/12-->
+      <div class="layui-col-md9" style="padding: 30px;">
+          
+        <div class="fly-panel" style="margin-bottom: 0;">
+          <div class="fly-panel-title fly-filter">
+            <a>每日心得</a>
+            <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/index.html#signin" class="layui-hide-sm layui-show-xs-block fly-right" id="LAY_goSignin" style="color: #FF5722;">去签到</a>
+          </div>
+          <ul class="fly-list">          
+            <li style="min-height:60px; height: auto;">
+              <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" class="fly-avatar">
+                <i class="layui-icon layui-icon-username" style="font-size: 30px; color: #dddfe0;" alt="user"></i>
+              </a>
+              <h2>
+                <!-- <a class="layui-badge">分享</a> -->
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/jie/detail.html">今日心得-1</a>
+              </h2>
+              <div class="fly-list-info">
+                <p>心得内容内容内容</p>
+              </div>
+              <img src="sky1.webp" style="width: 400px; height: 300px;">
+              <div class="fly-list-info">
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" link="">
+                  <cite>user-1</cite>
+                  <!--
+                  <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
+                  <i class="layui-badge fly-badge-vip">VIP3</i>
+                  -->
+                </a>
+              </div>
+              <div class="fly-list-info" style="bottom: 0px;">
+                <span>刚刚</span>
+                
+                <!-- <span class="fly-list-kiss layui-hide-xs" title="悬赏飞吻"><i class="iconfont icon-kiss"></i> 60</span> -->
+                <!--<span class="layui-badge fly-badge-accept layui-hide-xs">已结</span>-->
+                <span class="fly-list-nums"> 
+                  <i class="layui-icon layui-icon-heart" style="font-size: 20px;"></i>
+                </span>
+              </div>
+              <!-- <div class="fly-list-badge">
+                <span class="layui-badge layui-bg-red">精帖</span>
+              </div> -->
+            </li>
+            <li style="min-height:60px; height: auto;">
+              <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" class="fly-avatar">
+                <i class="layui-icon layui-icon-username" style="font-size: 30px; color: #dddfe0;" alt="user"></i>
+              </a>
+              <h2>
+                <!-- <a class="layui-badge">动态</a> -->
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/jie/detail.html">今日心得-1</a>
+              </h2>
+              <div class="fly-list-info">
+                <p>心得内容心得内容</p>
+                
+              </div>
+              <div class="fly-list-info">
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" link="">
+                  <cite>user-2</cite>
+                  <!--<i class="iconfont icon-renzheng" title="认证信息：XXX"></i>-->
+                  <!-- <i class="layui-badge fly-badge-vip">VIP3</i> -->
+                </a>
+                <span>刚刚</span>
+                
+                <!-- <span class="fly-list-kiss layui-hide-xs" title="悬赏飞吻"><i class="iconfont icon-kiss"></i> 60</span> -->
+                <!-- <span class="layui-badge fly-badge-accept layui-hide-xs">已结</span> -->
+                <span class="fly-list-nums"> 
+                  <i class="layui-icon layui-icon-heart" style="font-size: 20px;"></i>
+                </span>
+              </div>
+              <!-- <div class="fly-list-badge">
+                <span class="layui-badge layui-bg-red">精帖</span>
+              </div> -->
+            </li>
+            <li style="min-height:60px; height: auto;">
+              <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" class="fly-avatar">
+                <i class="layui-icon layui-icon-username" style="font-size: 30px; color: #dddfe0;" alt="user"></i>
+              </a>
+              <h2>
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/jie/detail.html">心得-1</a>
+              </h2>
+              <div class="fly-list-info">
+                <p>心得内容心得内容</p>
+                
+              </div>
+              <div class="fly-list-info">
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" link="">
+                  <cite>user</cite>
+                  <!--
+                  <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
+                  <i class="layui-badge fly-badge-vip">VIP3</i>
+                  -->
+                </a>
+                <span>刚刚</span>
+                
+                <!-- <span class="fly-list-kiss layui-hide-xs" title="悬赏飞吻"><i class="iconfont icon-kiss"></i> 60</span> -->
+                <!--<span class="layui-badge fly-badge-accept layui-hide-xs">已结</span>-->
+                <span class="fly-list-nums"> 
+                  <i class="layui-icon layui-icon-heart" style="font-size: 20px;"></i>
+                </span>
+              </div>
+              <div class="fly-list-badge">
+                <!--<span class="layui-badge layui-bg-red">精帖</span>-->
+              </div>
+            </li>
+            <li style="min-height:60px; height: auto;">
+              <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" class="fly-avatar">
+                <i class="layui-icon layui-icon-username" style="font-size: 30px; color: #dddfe0;" alt="user"></i>
+              </a>
+              <h2>
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/jie/detail.html">心得-1</a>
+              </h2>
+              <div class="fly-list-info">
+                <p>心得内容心得内容</p>
+                
+              </div>
+              <div class="fly-list-info">
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" link="">
+                  <cite>user</cite>
+                  <!--
+                  <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
+                  <i class="layui-badge fly-badge-vip">VIP3</i>
+                  -->
+                </a>
+                <span>2021-8-6</span>
+                
+                <!-- <span class="fly-list-kiss layui-hide-xs" title="悬赏飞吻"><i class="iconfont icon-kiss"></i> 60</span> -->
+                <!--<span class="layui-badge fly-badge-accept layui-hide-xs">已结</span>-->
+                <span class="fly-list-nums"> 
+                  <i class="layui-icon layui-icon-heart" style="font-size: 20px;"></i>
+                </span>
+              </div>
+              <div class="fly-list-badge">
+                <!--<span class="layui-badge layui-bg-red">精帖</span>-->
+              </div>
+            </li>
+            <li>
+              <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" class="fly-avatar">
+                <img src="./web测试模板-1_files/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" alt="user">
+              </a>
+              <h2>
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/jie/detail.html">web测试模板-1</a>
+              </h2>
+              <div class="fly-list-info">
+                <p>心得内容心得内容</p>
+                
+              </div>
+              <div class="fly-list-info">
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" link="">
+                  <cite>user</cite>
+                  <!--
+                  <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
+                  <i class="layui-badge fly-badge-vip">VIP3</i>
+                  -->
+                </a>
+                <span>刚刚</span>
+                
+                <!-- <span class="fly-list-kiss layui-hide-xs" title="悬赏飞吻"><i class="iconfont icon-kiss"></i> 60</span> -->
+                <!--<span class="layui-badge fly-badge-accept layui-hide-xs">已结</span>-->
+                <span class="fly-list-nums"> 
+                  <i class="layui-icon layui-icon-heart" style="font-size: 20px;"></i>
+                </span>
+              </div>
+              <div class="fly-list-badge">
+                <!--<span class="layui-badge layui-bg-red">精帖</span>-->
+              </div>
+            </li>
+            <li>
+              <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" class="fly-avatar">
+                <img src="./web测试模板-1_files/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" alt="user">
+              </a>
+              <h2>
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/jie/detail.html">web测试模板-1</a>
+              </h2>
+              <div class="fly-list-info">
+                <p>心得内容心得内容</p>
+                
+              </div>
+              <div class="fly-list-info">
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" link="">
+                  <cite>user</cite>
+                  <!--
+                  <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
+                  <i class="layui-badge fly-badge-vip">VIP3</i>
+                  -->
+                </a>
+                <span>刚刚</span>
+                
+                <!-- <span class="fly-list-kiss layui-hide-xs" title="悬赏飞吻"><i class="iconfont icon-kiss"></i> 60</span> -->
+                <!--<span class="layui-badge fly-badge-accept layui-hide-xs">已结</span>-->
+                <span class="fly-list-nums"> 
+                  <i class="layui-icon layui-icon-heart" style="font-size: 20px;"></i>
+                </span>
+              </div>
+              <div class="fly-list-badge">
+                <!--<span class="layui-badge layui-bg-red">精帖</span>-->
+              </div>
+            </li>
+            <li>
+              <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" class="fly-avatar">
+                <img src="./web测试模板-1_files/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" alt="user">
+              </a>
+              <h2>
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/jie/detail.html">web测试模板-1</a>
+              </h2>
+              <div class="fly-list-info">
+                <p>心得内容心得内容</p>
+                
+              </div>
+              <div class="fly-list-info">
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" link="">
+                  <cite>user</cite>
+                  <!--
+                  <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
+                  <i class="layui-badge fly-badge-vip">VIP3</i>
+                  -->
+                </a>
+                <span>刚刚</span>
+                
+                <!-- <span class="fly-list-kiss layui-hide-xs" title="悬赏飞吻"><i class="iconfont icon-kiss"></i> 60</span> -->
+                <!--<span class="layui-badge fly-badge-accept layui-hide-xs">已结</span>-->
+                <span class="fly-list-nums"> 
+                  <i class="layui-icon layui-icon-heart" style="font-size: 20px;"></i>
+                </span>
+              </div>
+              <div class="fly-list-badge">
+                <!--<span class="layui-badge layui-bg-red">精帖</span>-->
+              </div>
+            </li>
+            <li>
+              <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" class="fly-avatar">
+                <img src="./web测试模板-1_files/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" alt="user">
+              </a>
+              <h2>
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/jie/detail.html">web测试模板-1</a>
+              </h2>
+              <div class="fly-list-info">
+                <p>心得内容心得内容</p>
+                
+              </div>
+              <div class="fly-list-info">
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" link="">
+                  <cite>user</cite>
+                  <!--
+                  <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
+                  <i class="layui-badge fly-badge-vip">VIP3</i>
+                  -->
+                </a>
+                <span>刚刚</span>
+                
+                <!-- <span class="fly-list-kiss layui-hide-xs" title="悬赏飞吻"><i class="iconfont icon-kiss"></i> 60</span> -->
+                <!--<span class="layui-badge fly-badge-accept layui-hide-xs">已结</span>-->
+                <span class="fly-list-nums"> 
+                  <i class="layui-icon layui-icon-heart" style="font-size: 20px;"></i>
+                </span>
+              </div>
+              <div class="fly-list-badge">
+                <!--<span class="layui-badge layui-bg-red">精帖</span>-->
+              </div>
+            </li>
+            <li>
+              <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" class="fly-avatar">
+                <img src="./web测试模板-1_files/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" alt="user">
+              </a>
+              <h2>
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/jie/detail.html">web测试模板-1</a>
+              </h2>
+              <div class="fly-list-info">
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" link="">
+                  <cite>user</cite>
+                  <!--
+                  <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
+                  <i class="layui-badge fly-badge-vip">VIP3</i>
+                  -->
+                </a>
+                <span>刚刚</span>
+                
+                <!-- <span class="fly-list-kiss layui-hide-xs" title="悬赏飞吻"><i class="iconfont icon-kiss"></i> 60</span> -->
+                <!--<span class="layui-badge fly-badge-accept layui-hide-xs">已结</span>-->
+                <span class="fly-list-nums"> 
+                  <i class="layui-icon layui-icon-heart" style="font-size: 20px;"></i>
+                </span>
+              </div>
+              <div class="fly-list-badge">
+                <!--<span class="layui-badge layui-bg-red">精帖</span>-->
+              </div>
+            </li>
+            <li>
+              <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" class="fly-avatar">
+                <img src="./web测试模板-1_files/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" alt="user">
+              </a>
+              <h2>
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/jie/detail.html">web测试模板-1</a>
+              </h2>
+              <div class="fly-list-info">
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" link="">
+                  <cite>user</cite>
+                  <!--
+                  <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
+                  <i class="layui-badge fly-badge-vip">VIP3</i>
+                  -->
+                </a>
+                <span>刚刚</span>
+                
+                <!-- <span class="fly-list-kiss layui-hide-xs" title="悬赏飞吻"><i class="iconfont icon-kiss"></i> 60</span> -->
+                <!--<span class="layui-badge fly-badge-accept layui-hide-xs">已结</span>-->
+                <span class="fly-list-nums"> 
+                  <i class="layui-icon layui-icon-heart" style="font-size: 20px;"></i>
+                </span>
+              </div>
+              <div class="fly-list-badge">
+                <!--<span class="layui-badge layui-bg-red">精帖</span>-->
+              </div>
+            </li>
+            <li>
+              <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" class="fly-avatar">
+                <img src="./web测试模板-1_files/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" alt="user">
+              </a>
+              <h2>
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/jie/detail.html">web测试模板-1</a>
+              </h2>
+              <div class="fly-list-info">
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" link="">
+                  <cite>user</cite>
+                  <!--
+                  <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
+                  <i class="layui-badge fly-badge-vip">VIP3</i>
+                  -->
+                </a>
+                <span>刚刚</span>
+                
+                <!-- <span class="fly-list-kiss layui-hide-xs" title="悬赏飞吻"><i class="iconfont icon-kiss"></i> 60</span> -->
+                <!--<span class="layui-badge fly-badge-accept layui-hide-xs">已结</span>-->
+                <span class="fly-list-nums"> 
+                  <i class="layui-icon layui-icon-heart" style="font-size: 20px;"></i>
+                </span>
+              </div>
+              <div class="fly-list-badge">
+                <!--<span class="layui-badge layui-bg-red">精帖</span>-->
+              </div>
+            </li>
+            <li>
+              <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" class="fly-avatar">
+                <img src="./web测试模板-1_files/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" alt="user">
+              </a>
+              <h2>
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/jie/detail.html">web测试模板-1</a>
+              </h2>
+              <div class="fly-list-info">
+                <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/user/home.html" link="">
+                  <cite>user</cite>
+                  <!--
+                  <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
+                  <i class="layui-badge fly-badge-vip">VIP3</i>
+                  -->
+                </a>
+                <span>刚刚</span>
+                
+                <!-- <span class="fly-list-kiss layui-hide-xs" title="悬赏飞吻"><i class="iconfont icon-kiss"></i> 60</span> -->
+                <!--<span class="layui-badge fly-badge-accept layui-hide-xs">已结</span>-->
+                <span class="fly-list-nums"> 
+                  <i class="layui-icon layui-icon-heart" style="font-size: 20px;"></i>
+                </span>
+              </div>
+              <div class="fly-list-badge">
+                <!--<span class="layui-badge layui-bg-red">精帖</span>-->
+              </div>
+            </li>
+          </ul>
+          <div style="text-align: center">
+            <div class="laypage-main">
+              <a href="https://www.17sucai.com/preview/1971132/2020-04-29/fly-3.0/html/jie/index.html" class="laypage-next">更多</a>
+            </div>
+          </div>
+  
+        </div>
+
+      </div>
+      <!--3/12-->
+      <div class="layui-col-md3">
+        <div class="layui-card">
+          <div class="layui-card-header">
+            打卡
+          </div>
+          <div class="layui-card-body">
+            <div class="layui-inline" id="calender" style="padding-left: 15%;"></div>
+            <div style="padding-top:5%;">
+              <button type="button" class="layui-btn layui-btn-normal layui-btn-fluid">今日打卡</button>
+            </div>
+          </div>
+        </div>
+        <div class="layui-card">
+          <div class="layui-card-header">
+            修行功课
+          </div>
+          <div class="layui-card-body">
+            <div>
+              1.您今天有照顾自己的身体健康吗?
+            </div>
+            <div style="padding-left: 15%;">
+              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">常常</button>
+              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">有时</button>
+              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">暂时没有</button>
+            </div>
+            <div>
+              2.您今天有关照自己的心轻松舒服吗？
+            </div>
+            <div style="padding-left: 15%;">
+              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">常常</button>
+              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">有时</button>
+              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">暂时没有</button>
+            </div>
+            <div>
+              3.您今天有对他人微笑吗？
+            </div>
+            <div style="padding-left: 15%;">
+              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">常常</button>
+              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">有时</button>
+              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">暂时没有</button>
+            </div>
+            <div>
+              4.您今天有保持环境的清洁整齐吗？
+            </div>
+            <div style="padding-left: 15%;">
+              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">常常</button>
+              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">有时</button>
+              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">暂时没有</button>
+            </div>
+            <div>
+              5.您今天有静坐吗？
+            </div>
+            <div style="padding-left: 15%;">
+              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">常常</button>
+              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">有时</button>
+              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">暂时没有</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="./layui/layui.js"></script>
+<script>
+//JS 
+layui.use(['jquery','element', 'layer', 'util', 'laydate'], function(){
+  var element = layui.element
+  ,layer = layui.layer
+  ,util = layui.util
+  ,laydate = layui.laydate
+  ,$ = layui.$;
+  
+  //日历
+  laydate.render({
+    elem: '#calender'
+    ,position: 'static'
+  });
+
+  //头部事件
+  util.event('lay-header-event', {
+    //左侧菜单事件
+    menuLeft: function(othis){
+      layer.msg('展开左侧菜单的操作', {icon: 0});
+    }
+    ,menuRight: function(){
+      layer.open({
+        type: 1
+        ,content: '<div style="padding: 15px;">处理右侧面板的操作</div>'
+        ,area: ['260px', '100%']
+        ,offset: 'rt' //右上角
+        ,anim: 5
+        ,shadeClose: true
+      });
+    }
+  });
+  
+});
+</script>
+</body>
+</html>
+      

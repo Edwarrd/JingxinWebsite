@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* CSS Document */
+/*index*/
+
+body{
+	background-color: #eefafd;
+}
+
+.intro.layui-row .introImg{
+	width: 583px;
+	height: 400px;
+}
+.intro.layui-row .introTitle{
+	position:absolute;
+	text-align: center;
+	width: 583px;
+	height: 50px;
+	line-height:50px;
+	font-size:18px;
+	color:#ffffff;
+	background:#272728;
+	opacity:0.6;
+}
+
+#introTest .introTitle{
+	position:absolute;
+	text-align: center;
+	width: 583px;
+	height: 51px;
+	bottom: 3px;
+	line-height:51px;
+	font-size:18px;
+	color:#ffffff;
+	background:#272728;
+	opacity:0.6;
+	-moz-opacity:0.8;
+	filter:alpha(opacity=80);
+}
+.activity{
+	position: relative;
+	width: 266px;
+	height: 400px;
+	padding-left: 20px;
+	float: left;
+}
+.activity.layui-row .activityImg{
+	width: 266px;
+	height: 390px;
+}
+.activity.layui-row .activityTitle{
+	position:absolute;
+	text-align: center;
+	width: 266px;
+	height: 51px;
+	bottom: 3px;
+	line-height:51px;
+	font-size:18px;
+	color:#ffffff;
+	background:#272728;
+	opacity:0.6;
+	-moz-opacity:0.8;
+	filter:alpha(opacity=80);
+}
+#experience .experience{
+	position: relative;
+	width: 266px;
+	height: 400px;
+	padding-left: 20px;
+	float: left;
+}
+#experience .expImg{
+	width: 266px;
+	height: 400px;
+}
+#experience .expTitle{
+	position:absolute;
+	text-align: center;
+	width: 266px;
+	height: 51px;
+	bottom: 3px;
+	line-height:51px;
+	font-size:18px;
+	color:#ffffff;
+	background:#272728;
+	opacity:0.6;
+	-moz-opacity:0.8;
+	filter:alpha(opacity=80);
+}
+.discussImg{
+	width: 266px;
+	height: 350px;
+	padding-left:40px;
+}
