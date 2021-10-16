@@ -52,7 +52,7 @@
           <div class="layui-form-item">
             <label class="layui-form-label">性别 </label>
             <div class="layui-input-block">
-              {% if user.gender==M %}
+              {% if user.gender=='M' %}
                 <input type="radio" name="sex" value="nan" title="男" checked>
                 <input type="radio" name="sex" value="nv" title="女">
               {% else %}
@@ -64,19 +64,19 @@
           <div class="layui-form-item">
             <label class="layui-form-label">手机</label>
             <div class="layui-input-block">
-              <input type="text" name="title" required placeholder="153XXXXXXXX" autocomplete="off" class="layui-input">
+              <input type="text" name="title" required placeholder="{{user.mobile}}" autocomplete="off" class="layui-input">
             </div>
           </div>
           <div class="layui-form-item">
             <label class="layui-form-label">邮箱</label>
             <div class="layui-input-block">
-              <input type="text" name="title" required placeholder="XXX@gmail.com" autocomplete="off" class="layui-input">
+              <input type="text" name="title" required placeholder="{{user.email}}" autocomplete="off" class="layui-input">
             </div>
           </div>
           <div class="layui-inline">
             <label class="layui-form-label">出生年月</label>
             <div class="layui-input-inline">
-              <input type="text" class="layui-input" id="test3" placeholder="yyyy-MM">
+              <input type="text" class="layui-input" id="test3" placeholder="{{user.birth}}">
             </div>
           </div>
           <div style="padding:30px; text-align: center;">

@@ -15,6 +15,8 @@ import com.itranswarp.learnjava.bean.User;
 import com.itranswarp.learnjava.framework.GetMapping;
 import com.itranswarp.learnjava.framework.ModelAndView;
 import com.itranswarp.learnjava.framework.PostMapping;
+import org.apache.commons.validator.Validator;
+import org.apache.commons.validator.routines.EmailValidator;
 
 public class UserController {
 
@@ -23,17 +25,28 @@ public class UserController {
 	String JDBC_USER = "testuser";
 	String JDBC_PASSWORD = "password";
 
-	private User JDBCData (String name, String password){
+	private User JDBCData (String account, String password){
+
 		{
 			//获取连接
 			try (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD)) {
 				// TODO: 访问数据库
-				try (PreparedStatement prestmt = conn.prepareStatement("SELECT * FROM accounts WHERE name=? AND password=?")) {
-					prestmt.setObject(1, name);
+                //Check the email address
+                EmailValidator validator = EmailValidator.getInstance();
+                String SQL;
+                if (validator.isValid(account)){
+                    SQL = "SELECT * FROM accounts WHERE email=? AND password=?";
+                }
+                else{
+                    SQL = "SELECT * FROM accounts WHERE phone=? AND password=?";
+                }
+
+				try (PreparedStatement prestmt = conn.prepareStatement(SQL)) {
+					prestmt.setObject(1,account);
 					prestmt.setObject(2,password);
 					try (ResultSet rs = prestmt.executeQuery()){
 						if (rs.next()){
-							User user = new User(rs.getLong(1),rs.getString(2), rs.getString(3), rs.getString(7));
+							User user = new User(rs.getLong("account_id"),rs.getString("name"), rs.getString("gender"), rs.getString("phone"), rs.getString("email"), rs.getDate("birth"), rs.getString("password"));
 							return user;
 						}
 					}catch (Exception e){

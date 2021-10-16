@@ -18,10 +18,13 @@ public class User {
 	public User() {
 	}
 
-	public User(long account_id, String name, String gender, String password) {
+	public User(long account_id, String name,String gender, String mobile, String email, Date birth, String password) {
 		this.account_id = account_id;
 		this.name = name;
 		this.gender = gender;
+		this. mobile = mobile;
+		this.email = email;
+		this. birth = birth;
 		this.password = password;
 //		this.description = description;
 	}
