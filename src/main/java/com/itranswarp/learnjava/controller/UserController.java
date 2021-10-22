@@ -25,23 +25,14 @@ public class UserController {
 	String JDBC_USER = "testuser";
 	String JDBC_PASSWORD = "password";
 
-	private User JDBCData (String account, String password){
+	private User JDBCData (String account, String password, String sql){
 
 		{
 			//获取连接
 			try (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD)) {
 				// TODO: 访问数据库
-                //Check the email address
-                EmailValidator validator = EmailValidator.getInstance();
-                String SQL;
-                if (validator.isValid(account)){
-                    SQL = "SELECT * FROM accounts WHERE email=? AND password=?";
-                }
-                else{
-                    SQL = "SELECT * FROM accounts WHERE phone=? AND password=?";
-                }
 
-				try (PreparedStatement prestmt = conn.prepareStatement(SQL)) {
+				try (PreparedStatement prestmt = conn.prepareStatement(sql)) {
 					prestmt.setObject(1,account);
 					prestmt.setObject(2,password);
 					try (ResultSet rs = prestmt.executeQuery()){
@@ -76,6 +67,11 @@ public class UserController {
 //	};
 
 	//Get 请求
+	@GetMapping("/register")
+    public ModelAndView register(){
+	    return new ModelAndView("/Register.html");
+    }
+
 	@GetMapping("/signin")
 	public ModelAndView signin() {
 		//跳转到signin页面
@@ -86,21 +82,17 @@ public class UserController {
 	@PostMapping("/signin")
 	public ModelAndView doSignin(SignInBean bean, HttpServletResponse response, HttpSession session)
 			throws IOException {
-//		User user = userDatabase.get(bean.email);
-//		if (user == null || !user.password.equals(bean.password)) {
-//			response.setContentType("application/json");
-//			PrintWriter pw = response.getWriter();
-//			pw.write("{\"error\":\"Bad email or password\"}");
-//			pw.flush();
-//		} else {
-//			session.setAttribute("user", user);
-//			response.setContentType("application/json");
-//			PrintWriter pw = response.getWriter();
-//			pw.write("{\"result\":true}");
-//			pw.flush();
-//		}
         //在数据库中比对账户和密码，创建bean
-		User user = JDBCData(bean.name, bean.password);
+        //Check the email address
+        EmailValidator validator = EmailValidator.getInstance();
+        String SQL;
+        if (validator.isValid(bean.name)){
+            SQL = "SELECT * FROM accounts WHERE email=? AND password=?";
+        }
+        else{
+            SQL = "SELECT * FROM accounts WHERE phone=? AND password=?";
+        }
+		User user = JDBCData(bean.name, bean.password, SQL);
 		if (user!=null){
 		    //如果比对成功，即登录成功，创建seesion
 			session.setAttribute("user",user);

@@ -1,258 +1,63 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>静坐冥想介绍页</title>
-  <link rel="stylesheet" href="./layui/css/layui.css">
-  <link rel="stylesheet" href="css/test.css">
-  <script src="./jquery-3.6.0.js">
-  </script>
-</head>
-<body>
-<div class="layui-layout layui-layout-admin">
-  <div class="layui-header" style="background-color:rgba(202, 234, 247, 0.897);">
-    <div class="layui-logo layui-hide-xs" style="font-size: 20px; color: rgb(49, 58, 61);">护心网-静坐冥想</div>
-    <!-- 头部区域（可配合layui 已有的水平导航） -->
-    <ul class="layui-nav layui-layout-left">
-      <!-- 移动端显示 -->
-      <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
-        <i class="layui-icon layui-icon-spread-left"></i>
-      </li>
-      
-      <li class="layui-nav-item layui-hide-xs"><a href="FrontPage-1.html" style="font-size: 18px; color: black;">首页</a></li>
-      <li class="layui-nav-item layui-hide-xs layui-this"><a href="" style="font-size: 18px; color: black;">介绍</a></li>
-      <li class="layui-nav-item layui-hide-xs"><a href="Activity-1.html" style="font-size: 18px; color: black;">活动</a></li>
-      <li class="layui-nav-item layui-hide-xs"><a href="Exp-1.html" style="font-size: 18px; color: black;">心得</a></li>
-      <li class="layui-nav-item layui-hide-xs"><a href="Discuss-1.html" style="font-size: 18px; color: black;">讨论</a></li>
-      <li class="layui-nav-item layui-hide-xs"><a href="Story-1.html" style="font-size: 18px; color: black;">修行故事</a></li>
-      <li class="layui-nav-item layui-hide-xs"><a href="" style="font-size: 18px; color: black;">公告<span class="layui-badge">6</span></a></li>
-      <!-- <li class="layui-nav-item">
-        <a href="javascript:;">nav groups</a>
-        <dl class="layui-nav-child">
-          <dd><a href="">menu 11</a></dd>
-          <dd><a href="">menu 22</a></dd>
-          <dd><a href="">menu 33</a></dd>
-        </dl>
-      </li> -->
-    </ul>
-    <ul class="layui-nav layui-layout-right">
-      <!--登录完成状态-->
-      <li class="layui-nav-item">
-        <a href="Msg-1.html" style="font-size: 18px; color: black;">消息<span class="layui-badge-dot"></span></a>
-      </li>
-      <li class="layui-nav-item layui-hide layui-show-md-inline-block">
-        <a href="javascript:;" style="font-size: 18px; color: black;">
-          <img src="./logotest.webp" class="layui-nav-img">我
-        </a>
-        <dl class="layui-nav-child">
-          <dd><a href="Account.html">Profile</a></dd>
-          <dd><a href="">Settings</a></dd>
-          <dd><a href="">Sign out</a></dd>
-        </dl>
-      </li>
-      <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
-        <a href="javascript:;">
-          <i class="layui-icon layui-icon-more-vertical"></i>
-        </a>
-      </li>
+{% extends "_frame.html" %}
 
-      <!--未登录状态-->
-      <!-- <li class="layui-nav-item">
-        <a href="./user/login.html">登入</a>
-      </li>
-      <li class="layui-nav-item">
-        <a href="./user/reg.html">注册</a>
-      </li> -->
-
-    </ul>
-  </div>
-  
-  <div class="layui-side" style="background-color: rgba(202, 234, 247, 0.897);">
-    <div class="layui-side-scroll">
-      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-      <ul class="layui-nav layui-nav-tree" style="background-color: rgba(202, 234, 247, 0.897);">
-        <li class="layui-nav-item"><a class="layui-font-black" href="javascript:;" style="font-size: 18px;">五美德</a></li>
-        <!-- <li class="layui-nav-item">
-          <a href="javascript:;">menu group 2</a>
-          <dl class="layui-nav-child">
-            <dd><a href="javascript:;">list 1</a></dd>
-            <dd><a href="javascript:;">list 2</a></dd>
-            <dd><a href="">超链接</a></dd>
-          </dl>
-        </li> -->
-        <li class="layui-nav-item"><a href="" style="font-size: 18px; color: #000;">瑜伽</a></li>
-        <li class="layui-nav-item"><a href="" style="font-size: 18px; color: #000;">中医养生</a></li>
-        <li class="layui-nav-item"><a class="" href="javascript:;" style="font-size: 18px; color: #000;">有机食品</a></li>
-      </ul>
-    </div>
-  </div>
-  
-  <div class="layui-body" style="background-color:#eefafd;">
-    <!-- 内容主体区域 -->
-    <div class="layui-row">
-      <!--9/12-->
-      <div class="layui-col-md9" style="padding: 3%;">
-          <h1 style="text-align: center; font-size: 40px;">静坐禅修介绍</h1>
-          <div style="padding: 5%; font-size: 25px; line-height: 2;">
-            <p>
-              &nbsp;&nbsp;&nbsp;&nbsp;她，北京大学文学硕士，2017年时，42岁。她想要读博士，因为她觉得，没有博士学位，自己就没有实现既定人生目标，不算成功，但体能、学能确实已明显下降，怎么办？坚持吗？无力。放弃吗？不甘。
-            </p>
-            <p>
-              &nbsp;&nbsp;&nbsp;&nbsp;2018年夏天，幸运的她偶遇泰国高僧，开始接触静坐，每次静坐后都比静坐之前更开心更有力量。后来，她又两次去泰国学习静坐。到现在，静坐了三年，积累下许多：更健康；学习或做事更有效率；更多坦然、自如与快乐……
-            </p>
-            <p>
-              &nbsp;&nbsp;&nbsp;&nbsp;那么，她读博了吗？并没有。现在的她，体能、学能已可完全胜任读博，但她选择了把有限且宝贵的时间和精力放在这里。因为她希望更多的人和她一样，体会到身入窘境却豁然开朗的欣喜和希望，感受到路越走越宽的踏实与坦然。
-            </p>
-            <br>
-            <p>
-              &nbsp;&nbsp;&nbsp;&nbsp;心理学上有个关键概念叫“吸引力法则”。或许是源于这个法则，这三年里她接触到很多也热爱静坐的朋友，于是有了——我们。我们都曾经或正在通过静坐在身心方面有着不同程度的收获，比如皮肤变好、气质提升，比如体质增强、慢性病改善，比如不爱发脾气不易焦虑了，比如学习或工作能力提高，比如与人交往更顺畅和谐，比如面对人事时内心更坚定平稳且又平和柔软……于是，大家的人生也伴随着更多顺利和如意。用比较文学性的词语就是，通过静坐，进可自力更生扶摇直上，退可心甘气爽天高地阔。
-            </p>
-            <br>
-            <p>
-              &nbsp;&nbsp;&nbsp;&nbsp;有人说，生命是一段旅程，要懂得享受和体验。我们觉得，生命更是一场探索，因为其实我们往往并不真的了解自己或者真的爱自己，直到我们开始学会内向探索。
-            </p>
-            <p>
-              &nbsp;&nbsp;&nbsp;&nbsp;在这浮华尘世，在车水马龙的熙熙攘攘之中，通过静坐，我们探索自己的内在世界；通过探索自己的内在世界，我们沟通外在世间。
-            </p>
-            <p>
-              &nbsp;&nbsp;&nbsp;&nbsp;在静坐的道路上，我们会觉察会发现，更会惊喜不断。
-            </p>
-            <p>
-              &nbsp;&nbsp;&nbsp;&nbsp;我们不知不觉与自己和解，与世界和解，不经意间更爱自己，更爱这个世界。
-            </p>
-            <br>
-            <p style="text-align: center;">
-              &nbsp;&nbsp;&nbsp;&nbsp;所以，您愿意一起来踏上静坐之旅吗？
-            </p>
-            <p style="text-align: center;">
-              &nbsp;&nbsp;&nbsp;&nbsp;愿意更健康、更美好、更快乐与更成功吗？
-            </p>
-            <p style="text-align: center;">
-              &nbsp;&nbsp;&nbsp;&nbsp;愿意让生活再多一个利己助他的美善维度吗？
-            </p>
-            <p style="text-align: center;">
-              &nbsp;&nbsp;&nbsp;&nbsp;愿意始终前行在不断迈向生命新高度的道路上吗？
-            </p>
-            <br>
-            <p style="text-align: center;">
-              &nbsp;&nbsp;&nbsp;&nbsp;如果您愿意，
-            </p>
-            <p style="text-align: center;">
-              &nbsp;&nbsp;&nbsp;&nbsp;这里，就是起点！
-            </p>
-            <br>
-            <p>
-              &nbsp;&nbsp;&nbsp;&nbsp;在这里，我们可以学习和了解静坐的方法，也可以参与活动互相鼓励；可以汲取同道中人的经验收获，也可以把自己的成功心得分享给大家借鉴；可以有自己的私密小天地记录自己的静坐与日常，也可以了解到名人、成功人士的成长故事。
-            </p>
-            <br>
-            <p style="text-align: center; font-size: 30px;">
-              那么，现在就开始吧！
-            </p>
-          </div>
-      </div>
-      <!--3/12-->
-      <div class="layui-col-md3">
-        <div class="layui-card">
-          <div class="layui-card-header">
-            打卡
-          </div>
-          <div class="layui-card-body">
-            <div class="layui-inline" id="calender" style="padding-left: 15%;"></div>
-            <div style="padding-top:5%;">
-              <button type="button" class="layui-btn layui-btn-normal layui-btn-fluid">今日打卡</button>
-            </div>
-          </div>
-        </div>
-        <div class="layui-card">
-          <div class="layui-card-header">
-            修行功课
-          </div>
-          <div class="layui-card-body">
-            <div>
-              1.您今天有照顾自己的身体健康吗?
-            </div>
-            <div style="padding-left: 15%;">
-              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">常常</button>
-              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">有时</button>
-              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">暂时没有</button>
-            </div>
-            <div>
-              2.您今天有关照自己的心轻松舒服吗？
-            </div>
-            <div style="padding-left: 15%;">
-              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">常常</button>
-              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">有时</button>
-              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">暂时没有</button>
-            </div>
-            <div>
-              3.您今天有对他人微笑吗？
-            </div>
-            <div style="padding-left: 15%;">
-              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">常常</button>
-              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">有时</button>
-              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">暂时没有</button>
-            </div>
-            <div>
-              4.您今天有保持环境的清洁整齐吗？
-            </div>
-            <div style="padding-left: 15%;">
-              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">常常</button>
-              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">有时</button>
-              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">暂时没有</button>
-            </div>
-            <div>
-              5.您今天有静坐吗？
-            </div>
-            <div style="padding-left: 15%;">
-              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">常常</button>
-              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">有时</button>
-              <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">暂时没有</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+{% block main %}
+  <!--9/12-->
+<h1 style="text-align: center; font-size: 40px;">静坐禅修介绍</h1>
+<div style="padding: 5%; font-size: 25px; line-height: 2;">
+  <p>
+    &nbsp;&nbsp;&nbsp;&nbsp;她，北京大学文学硕士，2017年时，42岁。她想要读博士，因为她觉得，没有博士学位，自己就没有实现既定人生目标，不算成功，但体能、学能确实已明显下降，怎么办？坚持吗？无力。放弃吗？不甘。
+  </p>
+  <p>
+    &nbsp;&nbsp;&nbsp;&nbsp;2018年夏天，幸运的她偶遇泰国高僧，开始接触静坐，每次静坐后都比静坐之前更开心更有力量。后来，她又两次去泰国学习静坐。到现在，静坐了三年，积累下许多：更健康；学习或做事更有效率；更多坦然、自如与快乐……
+  </p>
+  <p>
+    &nbsp;&nbsp;&nbsp;&nbsp;那么，她读博了吗？并没有。现在的她，体能、学能已可完全胜任读博，但她选择了把有限且宝贵的时间和精力放在这里。因为她希望更多的人和她一样，体会到身入窘境却豁然开朗的欣喜和希望，感受到路越走越宽的踏实与坦然。
+  </p>
+  <br>
+  <p>
+    &nbsp;&nbsp;&nbsp;&nbsp;心理学上有个关键概念叫“吸引力法则”。或许是源于这个法则，这三年里她接触到很多也热爱静坐的朋友，于是有了——我们。我们都曾经或正在通过静坐在身心方面有着不同程度的收获，比如皮肤变好、气质提升，比如体质增强、慢性病改善，比如不爱发脾气不易焦虑了，比如学习或工作能力提高，比如与人交往更顺畅和谐，比如面对人事时内心更坚定平稳且又平和柔软……于是，大家的人生也伴随着更多顺利和如意。用比较文学性的词语就是，通过静坐，进可自力更生扶摇直上，退可心甘气爽天高地阔。
+  </p>
+  <br>
+  <p>
+    &nbsp;&nbsp;&nbsp;&nbsp;有人说，生命是一段旅程，要懂得享受和体验。我们觉得，生命更是一场探索，因为其实我们往往并不真的了解自己或者真的爱自己，直到我们开始学会内向探索。
+  </p>
+  <p>
+    &nbsp;&nbsp;&nbsp;&nbsp;在这浮华尘世，在车水马龙的熙熙攘攘之中，通过静坐，我们探索自己的内在世界；通过探索自己的内在世界，我们沟通外在世间。
+  </p>
+  <p>
+    &nbsp;&nbsp;&nbsp;&nbsp;在静坐的道路上，我们会觉察会发现，更会惊喜不断。
+  </p>
+  <p>
+    &nbsp;&nbsp;&nbsp;&nbsp;我们不知不觉与自己和解，与世界和解，不经意间更爱自己，更爱这个世界。
+  </p>
+  <br>
+  <p style="text-align: center;">
+    &nbsp;&nbsp;&nbsp;&nbsp;所以，您愿意一起来踏上静坐之旅吗？
+  </p>
+  <p style="text-align: center;">
+    &nbsp;&nbsp;&nbsp;&nbsp;愿意更健康、更美好、更快乐与更成功吗？
+  </p>
+  <p style="text-align: center;">
+    &nbsp;&nbsp;&nbsp;&nbsp;愿意让生活再多一个利己助他的美善维度吗？
+  </p>
+  <p style="text-align: center;">
+    &nbsp;&nbsp;&nbsp;&nbsp;愿意始终前行在不断迈向生命新高度的道路上吗？
+  </p>
+  <br>
+  <p style="text-align: center;">
+    &nbsp;&nbsp;&nbsp;&nbsp;如果您愿意，
+  </p>
+  <p style="text-align: center;">
+    &nbsp;&nbsp;&nbsp;&nbsp;这里，就是起点！
+  </p>
+  <br>
+  <p>
+    &nbsp;&nbsp;&nbsp;&nbsp;在这里，我们可以学习和了解静坐的方法，也可以参与活动互相鼓励；可以汲取同道中人的经验收获，也可以把自己的成功心得分享给大家借鉴；可以有自己的私密小天地记录自己的静坐与日常，也可以了解到名人、成功人士的成长故事。
+  </p>
+  <br>
+  <p style="text-align: center; font-size: 30px;">
+    那么，现在就开始吧！
+  </p>
 </div>
-
-
-<script src="./layui/layui.js"></script>
-<script>
-//JS 
-layui.use(['jquery','element', 'layer', 'util', 'laydate'], function(){
-  var element = layui.element
-  ,layer = layui.layer
-  ,util = layui.util
-  ,laydate = layui.laydate
-  ,$ = layui.$;
-  
-  //日历
-  laydate.render({
-    elem: '#calender'
-    ,position: 'static'
-  });
-
-  //头部事件
-  util.event('lay-header-event', {
-    //左侧菜单事件
-    menuLeft: function(othis){
-      layer.msg('展开左侧菜单的操作', {icon: 0});
-    }
-    ,menuRight: function(){
-      layer.open({
-        type: 1
-        ,content: '<div style="padding: 15px;">处理右侧面板的操作</div>'
-        ,area: ['260px', '100%']
-        ,offset: 'rt' //右上角
-        ,anim: 5
-        ,shadeClose: true
-      });
-    }
-  });
-  
-});
-</script>
-</body>
-</html>
+{% endblock %}
       

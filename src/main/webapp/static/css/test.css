@@ -6,6 +6,58 @@ body{
 	background-color: #eefafd;
 }
 
+/* 面板 */
+.fly-panel{margin-bottom: 15px; border-radius: 2px; background-color: #fff; box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);}
+.fly-panel-title{position: relative; height: 50px; line-height: 50px; padding: 0 15px; border-bottom: 1px dotted #E9E9E9; color: #333; border-radius: 2px 2px 0 0; font-size: 14px;}
+.fly-panel-calender{position: relative; padding: 300px 15px;}
+.fly-panel-main{padding: 10px 15px;}
+
+/* 分页 */
+.laypage-main,
+.laypage-main *{display:inline-block; *display:inline; *zoom:1; vertical-align:top;}
+.laypage-main{margin: 20px 0; border: 1px solid #009E94; border-right: none; border-bottom: none; font-size: 0;}
+.laypage-main *{padding: 0 20px; line-height: 36px; border-right: 1px solid #009E94; border-bottom: 1px solid #009E94; font-size: 14px;}
+.laypage-main .laypage-curr{background-color:#009E94; color:#fff;}
+
+/* 筛选 */
+.fly-filter a{padding: 0 8px; color: #666;}
+.fly-filter a.layui-this{color: #5FB878;}
+.fly-filter .fly-mid{margin: 0 8px;}
+.fly-filter-right{position: absolute; right: 10px; top: 0;}
+
+/* 列表 */
+.fly-list li{position: relative; height: 60px; line-height: 22px; padding: 15px 15px 15px 75px; border-bottom: 1px dotted #e2e2e2;}
+.fly-list li:last-child{border-bottom: none;}
+.fly-list li h2,
+.fly-list li h2 a,
+.fly-list-info{white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+
+.fly-list li h2{height: 26px; font-size: 0;}
+.fly-list li h2 a{display: inline-block; max-width: 80%; padding-right: 10px; font-size: 16px;}
+.fly-list li h2 .layui-badge{top: -2px; height: 16px; line-height: 16px; padding: 0 5px; margin-right: 10px; font-size: 12px; border: 1px solid #5FB878; background: none; color: #5FB878;}
+
+.fly-list-info{position: relative; font-size: 13px; color: #999;}
+.fly-list-info>*{padding-right: 15px;}
+.fly-list-info a[link]{color: #999;}
+.fly-list-info a[link]:hover{color: #5FB878;}
+.fly-list-info .icon-renzheng{position: relative; top: 1px; margin-right: 3px;}
+.fly-list-info .fly-badge-vip{position: relative; margin-left: 2px;}
+.fly-list-kiss{color: #FF5722;}
+.fly-list-nums{position: absolute; right: 0; top: 0; padding-right: 0!important;}
+.fly-list-nums i{position: relative; padding: 0 3px 0 15px;}
+
+.fly-list-badge{position: absolute; right: 15px; top: 15px; font-size: 0;}
+.fly-list-badge .layui-badge{margin-left: 5px; border-radius: 2px; font-size: 12px;}
+
+/* 单行列表 */
+.fly-list-one .fly-panel-title{margin-bottom: 5px;}
+.fly-list-one dd{margin: 0 15px; line-height: 26px; white-space: nowrap; overflow: hidden; list-style: decimal-leading-zero inside; *list-style-type: decimal inside; color: #009E94;}
+.fly-list-one dd a,
+.fly-list-one dd span{display: inline-block; *display: inline; *zoom: 1; vertical-align: top; font-style: normal}
+.fly-list-one dd a{max-width: 85%; margin-right: 5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px;}
+.fly-list-one dd span{font-size: 12px; color: #ccc;}
+.fly-list-one dd:last-child{padding-bottom: 5px;}
+
 .intro.layui-row .introImg{
 	width: 583px;
 	height: 400px;
@@ -22,20 +74,6 @@ body{
 	opacity:0.6;
 }
 
-#introTest .introTitle{
-	position:absolute;
-	text-align: center;
-	width: 583px;
-	height: 51px;
-	bottom: 3px;
-	line-height:51px;
-	font-size:18px;
-	color:#ffffff;
-	background:#272728;
-	opacity:0.6;
-	-moz-opacity:0.8;
-	filter:alpha(opacity=80);
-}
 .activity{
 	position: relative;
 	width: 266px;

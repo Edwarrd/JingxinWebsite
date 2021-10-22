@@ -6,234 +6,151 @@
     <title>静坐冥想首页</title>
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/test.css">
+    <!--<link rel="stylesheet" href="/static/css/global.css">-->
     <script src="/static/js/jquery-3.6.0.js"></script>
     <script src="/static/layui/layui.js"></script>
 
 </head>
 <body>
 <div class="layui-layout layui-layout-admin">
-    <div class="layui-fluid">
-        <div class="layui-header" style="background-color:rgba(202, 234, 247, 0.897);">
-            <div class="layui-logo layui-hide-xs" style="font-size: 20px; color: rgb(49, 58, 61);">护心网-静坐禅修</div>
-            <!-- 头部区域（可配合layui 已有的水平导航） -->
-            <ul class="layui-nav layui-layout-left">
-                <!-- 移动端显示 -->
-                <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
-                    <i class="layui-icon layui-icon-spread-left"></i>
+    <div class="layui-header" style="background-color:rgba(202, 234, 247, 0.897);">
+        <div class="layui-logo layui-hide-xs" style="font-size: 20px; color: rgb(49, 58, 61);">护心网-静坐禅修</div>
+        <!-- 头部区域（可配合layui 已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+            <!-- 移动端显示 -->
+            <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
+                <i class="layui-icon layui-icon-spread-left"></i>
+            </li>
+
+            <li class="layui-nav-item layui-hide-xs"><a href="/" style="font-size: 18px; color: black;">首页</a></li>
+            <li class="layui-nav-item layui-hide-xs"><a href="/intro" style="font-size: 18px; color: black;">介绍</a></li>
+            <li class="layui-nav-item layui-hide-xs"><a href="/activity" style="font-size: 18px; color: black;">活动</a></li>
+            <li class="layui-nav-item layui-hide-xs"><a href="/exp" style="font-size: 18px; color: black;">心得</a></li>
+            <li class="layui-nav-item layui-hide-xs"><a href="/discuss" style="font-size: 18px; color: black;">讨论</a></li>
+            <li class="layui-nav-item layui-hide-xs"><a href="/story" style="font-size: 18px; color: black;">修行故事</a></li>
+            <li class="layui-nav-item layui-hide-xs"><a href="/msg" style="font-size: 18px; color: black;">公告<span class="layui-badge">6</span></a></li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+
+            <!--未登录状态-->
+            {% if user==null %}
+                <li class="layui-nav-item">
+                    <a href="/signin" style="font-size: 18px; color: black;">登录</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="/register" style="font-size: 18px; color: black;">注册</a>
                 </li>
 
-                <li class="layui-nav-item layui-hide-xs layui-this"><a href="" style="font-size: 18px; color: black;">首页</a></li>
-                <li class="layui-nav-item layui-hide-xs"><a href="Intro-1.html" style="font-size: 18px; color: black;">介绍</a></li>
-                <li class="layui-nav-item layui-hide-xs"><a href="Activity-1.html" style="font-size: 18px; color: black;">活动</a></li>
-                <li class="layui-nav-item layui-hide-xs"><a href="Exp-1.html" style="font-size: 18px; color: black;">心得</a></li>
-                <li class="layui-nav-item layui-hide-xs"><a href="Discuss-1.html" style="font-size: 18px; color: black;">讨论</a></li>
-                <li class="layui-nav-item layui-hide-xs"><a href="Story-1.html" style="font-size: 18px; color: black;">修行故事</a></li>
-                <li class="layui-nav-item layui-hide-xs"><a href="" style="font-size: 18px; color: black;">公告<span class="layui-badge">6</span></a></li>
-            </ul>
-            <ul class="layui-nav layui-layout-right">
+            <!--登录完成状态-->
+            {% else %}
+                <li class="layui-nav-item">
+                    <a href="/msg" style="font-size: 18px; color: black;">消息<span class="layui-badge-dot"></span></a>
+                </li>
+                <li class="layui-nav-item layui-hide layui-show-md-inline-block">
 
-                <!--未登录状态-->
-                {% if user==null %}
-                    <li class="layui-nav-item">
-                        <a href="/signin" style="font-size: 18px; color: black;">登录</a>
-                    </li>
-                    <li class="layui-nav-item">
-                        <a href="/signin" style="font-size: 18px; color: black;">注册</a>
-                    </li>
+                    <!--<a href="Signin.html" class="layui-nav-item layui-hide-xs"  style="font-size: 18px; color: black;">登录</a>-->
+                    <a href="javascript:;" style="font-size: 18px; color: black;">
+                        <img src="/static/pics/logotest.webp" class="layui-nav-img">我
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/user/profile">Profile</a></dd>
+                        <dd><a href="">Settings</a></dd>
+                        <dd><a href="/signout">Sign out</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+                    <a href="javascript:;">
+                        <i class="layui-icon layui-icon-more-vertical"></i>
+                    </a>
+                </li>
+            {% endif %}
 
-                <!--登录完成状态-->
-                {% else %}
-                    <li class="layui-nav-item">
-                        <a href="Msg-1.html" style="font-size: 18px; color: black;">消息<span class="layui-badge-dot"></span></a>
-                    </li>
-                    <li class="layui-nav-item layui-hide layui-show-md-inline-block">
+        </ul>
+    </div>
 
-                        <!--<a href="Signin.html" class="layui-nav-item layui-hide-xs"  style="font-size: 18px; color: black;">登录</a>-->
-                        <a href="javascript:;" style="font-size: 18px; color: black;">
-                            <img src="/static/pics/logotest.webp" class="layui-nav-img">我
-                        </a>
-                        <dl class="layui-nav-child">
-                            <dd><a href="/user/profile">Profile</a></dd>
-                            <dd><a href="">Settings</a></dd>
-                            <dd><a href="/signout">Sign out</a></dd>
-                        </dl>
-                    </li>
-                    <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
-                        <a href="javascript:;">
-                            <i class="layui-icon layui-icon-more-vertical"></i>
-                        </a>
-                    </li>
-                {% endif %}
-
+    <div class="layui-side" style="background-color: rgba(202, 234, 247, 0.897);">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree" style="background-color: rgba(202, 234, 247, 0.897);">
+                <li class="layui-nav-item"><a class="layui-font-black" href="Wumeide.html" style="font-size: 18px;">五美德</a></li>
+                <li class="layui-nav-item"><a href="" style="font-size: 18px; color: #000;">瑜伽</a></li>
+                <li class="layui-nav-item"><a href="" style="font-size: 18px; color: #000;">中医养生</a></li>
+                <li class="layui-nav-item"><a class="" href="javascript:;" style="font-size: 18px; color: #000;">有机食品</a></li>
             </ul>
         </div>
+    </div>
 
-        <div class="layui-side" style="background-color: rgba(202, 234, 247, 0.897);">
-            <div class="layui-side-scroll">
-                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-                <ul class="layui-nav layui-nav-tree" style="background-color: rgba(202, 234, 247, 0.897);">
-                    <li class="layui-nav-item"><a class="layui-font-black" href="Wumeide.html" style="font-size: 18px;">五美德</a></li>
-                    <li class="layui-nav-item"><a href="" style="font-size: 18px; color: #000;">瑜伽</a></li>
-                    <li class="layui-nav-item"><a href="" style="font-size: 18px; color: #000;">中医养生</a></li>
-                    <li class="layui-nav-item"><a class="" href="javascript:;" style="font-size: 18px; color: #000;">有机食品</a></li>
-                </ul>
+    <div class="layui-body" style="background-color:#eefafd; width: 1700px; height: 450px;">
+        <!-- 内容主体区域 -->
+        <div class="layui-row">
+            <!--9/12-->
+            <div class="layui-col-md9" style="padding: 30px">
+                {% block main %}
+                {% endblock %}
             </div>
-        </div>
-
-        <div class="layui-body" style="background-color:#eefafd; width: 1700px; height: 450px;">
-            <!-- 内容主体区域 -->
-            <div class="layui-row">
-                <!--9/12-->
-                <div class="layui-col-md9">
-                    {% block main %}
-                    {% endblock %}
-
-
-                    <!--<div class="layui-row layui-col-space10" style="padding:50px; line-height:400px;">-->
-                        <!--<div class="layui-col-md6">-->
-                            <!--<div class="intro layui-row" style="line-height: 260px;">-->
-                                <!--<div class="layui-col-md12">-->
-                                    <!--<a href="Intro-1.html">-->
-                                        <!--<div class="introTitle" style="bottom: 0%;">-->
-                                            <!--介绍-->
-                                        <!--</div>-->
-                                        <!--<img class="introImg" src="/static/pics/Intro.webp" style="width: 583px; height: 260px;">-->
-                                    <!--</a>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<div class="intro layui-row" style="line-height: 200px; padding-top: 15px;">-->
-                                <!--<div class="layui-col-md12">-->
-                                    <!--<a href="Intro-1.html">-->
-                                        <!--<div class="introTitle" style="bottom: 0%;">-->
-                                            <!--知识-->
-                                        <!--</div>-->
-                                        <!--<img class="introImg" src="/static/pics/sky1.webp" style="width: 583px; height: 260px;">-->
-                                    <!--</a>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<div class="intro layui-row" style="line-height: 200px; padding-top: 15px;">-->
-                                <!--<div class="layui-col-md12">-->
-                                    <!--<a href="Intro-1.html">-->
-                                        <!--<div class="introTitle" style="bottom: 0%;">-->
-                                            <!--修行故事-->
-                                        <!--</div>-->
-                                        <!--<img class="introImg" src="/static/pics/sky1.webp" style="width: 583px; height: 260px;">-->
-                                    <!--</a>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="layui-col-md3" style="padding-left: 25px;">-->
-                            <!--<div class="activity layui-row">-->
-                                <!--<div class="layui-col-md12">-->
-                                    <!--<a href="Activity-1.html">-->
-                                        <!--<div class="activityTitle">-->
-                                            <!--心得-->
-                                        <!--</div>-->
-                                        <!--<img class="activityImg" src="/static/pics/Activity.webp">-->
-                                    <!--</a>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<div class="activity layui-row" style="padding-top: 15px;">-->
-                                <!--<div class="layui-col-md12">-->
-                                    <!--<a href="Activity-1.html">-->
-                                        <!--<div class="activityTitle">-->
-                                            <!--公告-->
-                                        <!--</div>-->
-                                        <!--<img class="activityImg" src="/static/pics/Activity.webp">-->
-                                    <!--</a>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="layui-col-md3" style="padding-left: 25px;">-->
-                            <!--<div class="activity layui-row">-->
-                                <!--<div class="layui-col-md12">-->
-                                    <!--<a href="Activity-1.html">-->
-                                        <!--<div class="activityTitle">-->
-                                            <!--活动-->
-                                        <!--</div>-->
-                                        <!--<img class="activityImg" src="/static/pics/Activity.webp">-->
-                                    <!--</a>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<div class="activity layui-row" style="padding-top: 15px;">-->
-                                <!--<div class="layui-col-md12">-->
-                                    <!--<a href="Activity-1.html">-->
-                                        <!--<div class="activityTitle">-->
-                                            <!--讨论-->
-                                        <!--</div>-->
-                                        <!--<img class="activityImg" src="/static/pics/Activity.webp">-->
-                                    <!--</a>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-
-                </div>
-                <!--3/12-->
-                <div class="layui-col-md3">
-                    <div class="layui-card">
-                        <div class="layui-card-header">
-                            打卡
-                        </div>
-                        <div class="layui-card-body">
-                            <div class="layui-inline" id="calender" style="padding-left: 15%;"></div>
-                            <div style="padding-top:5%;">
-                                <button type="button" class="layui-btn layui-btn-normal layui-btn-fluid">今日打卡</button>
-                            </div>
+            <!--3/12-->
+            <div class="layui-col-md3">
+                <div class="layui-card">
+                    <div class="layui-card-header">
+                        打卡
+                    </div>
+                    <div class="layui-card-body">
+                        <div class="layui-inline" id="calender" style="padding-left: 15%;"></div>
+                        <div style="padding-top:5%;">
+                            <button type="button" class="layui-btn layui-btn-normal layui-btn-fluid">今日打卡</button>
                         </div>
                     </div>
-                    <div class="layui-card">
-                        <div class="layui-card-header">
-                            修行功课
+                </div>
+                <div class="layui-card">
+                    <div class="layui-card-header">
+                        修行功课
+                    </div>
+                    <div class="layui-card-body">
+                        <div>
+                            1.您今天有照顾自己的身体健康吗?
                         </div>
-                        <div class="layui-card-body">
-                            <div>
-                                1.您今天有照顾自己的身体健康吗?
-                            </div>
-                            <div style="padding-left: 15%;">
-                                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">常常</button>
-                                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">有时</button>
-                                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">暂时没有</button>
-                            </div>
-                            <div>
-                                2.您今天有关照自己的心轻松舒服吗？
-                            </div>
-                            <div style="padding-left: 15%;">
-                                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">常常</button>
-                                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">有时</button>
-                                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">暂时没有</button>
-                            </div>
-                            <div>
-                                3.您今天有对他人微笑吗？
-                            </div>
-                            <div style="padding-left: 15%;">
-                                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">常常</button>
-                                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">有时</button>
-                                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">暂时没有</button>
-                            </div>
-                            <div>
-                                4.您今天有保持环境的清洁整齐吗？
-                            </div>
-                            <div style="padding-left: 15%;">
-                                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">常常</button>
-                                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">有时</button>
-                                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">暂时没有</button>
-                            </div>
-                            <div>
-                                5.您今天有静坐吗？
-                            </div>
-                            <div style="padding-left: 15%;">
-                                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">常常</button>
-                                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">有时</button>
-                                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">暂时没有</button>
-                            </div>
+                        <div style="padding-left: 15%;">
+                            <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">常常</button>
+                            <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">有时</button>
+                            <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">暂时没有</button>
+                        </div>
+                        <div>
+                            2.您今天有关照自己的心轻松舒服吗？
+                        </div>
+                        <div style="padding-left: 15%;">
+                            <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">常常</button>
+                            <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">有时</button>
+                            <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">暂时没有</button>
+                        </div>
+                        <div>
+                            3.您今天有对他人微笑吗？
+                        </div>
+                        <div style="padding-left: 15%;">
+                            <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">常常</button>
+                            <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">有时</button>
+                            <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">暂时没有</button>
+                        </div>
+                        <div>
+                            4.您今天有保持环境的清洁整齐吗？
+                        </div>
+                        <div style="padding-left: 15%;">
+                            <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">常常</button>
+                            <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">有时</button>
+                            <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">暂时没有</button>
+                        </div>
+                        <div>
+                            5.您今天有静坐吗？
+                        </div>
+                        <div style="padding-left: 15%;">
+                            <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">常常</button>
+                            <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">有时</button>
+                            <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-border-blue">暂时没有</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
 
 
@@ -250,6 +167,7 @@
         //日历
         laydate.render({
             elem: '#calender'
+            ,theme: '#1E90FF'
             ,position: 'static'
         });
 

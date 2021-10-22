@@ -1,0 +1,61 @@
+{% extends "_frame.html" %}
+
+{% block main %}
+<!-- 内容主体区域 -->
+<!--9/12-->
+<div class="layui-card">
+    <div class="layui-card-header" style="font-size: 25px; padding: 2%;">注册</div>
+    <div class="layui-card-body">
+        <form method="post" action="/register" class="layui-form" style="font-size: 15px; padding-top: 1%;">
+            {% if error != null %}
+            <div class="layui-form-item">
+                <p id="error" class="text-danger">{{ error }}</p>
+            </div>
+            {% endif %}
+            <div class="layui-form-item">
+                <label class="layui-form-label">账户名称</label>
+                <div class="layui-input-inline">
+                    <input name="name" type="text" required lay-verify="required" placeholder="请输入账户名称" autocomplete="off" class="layui-input" minlength="1" maxlength="50">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">性别</label>
+                <div class="layui-input-inline">
+                    <input name="gender" type="text" required lay-verify="required" placeholder="请输入性别M/F" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">注册邮箱</label>
+                <div class="layui-input-inline">
+                    <input name="email" type="email" required lay-verify="required" placeholder="请输入邮箱" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">注册手机号</label>
+                <div class="layui-input-inline">
+                    <input name="phone" type="phone" required lay-verify="required" placeholder="请输入手机号" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">出生日期</label>
+                <div class="layui-input-inline">
+                    <input name="birth" type="date" required lay-verify="required" placeholder="请填写出生日期" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">密码</label>
+                <div class="layui-input-inline">
+                    <input name="password" type="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div style="padding:30px; text-align: center;">
+                <button type="submit" class="layui-btn layui-btn-radius layui-btn-primary layui-btn-fluid layui-border-blue">注册</button>
+            </div>
+            <div style="padding:30px; text-align: center;">
+                <a href="/signin"><button type="submit" class="layui-btn layui-btn-radius layui-btn-primary layui-btn-fluid layui-border-blue">已经有账户了？点击登录</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
