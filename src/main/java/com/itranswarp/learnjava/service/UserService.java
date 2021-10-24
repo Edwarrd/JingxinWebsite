@@ -3,6 +3,7 @@ package com.itranswarp.learnjava.service;
 import java.sql.Date;
 import java.sql.Statement;
 
+import com.itranswarp.learnjava.entity.CheckIn;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,7 +70,7 @@ public class UserService {
 		}, holder)) {
 			throw new RuntimeException("Insert failed.");
 		}
-		user.setId(holder.getKey().longValue());
+		user.setId(holder.getKey().intValue());
 		return user;
 	}
 
@@ -78,4 +79,23 @@ public class UserService {
 			throw new RuntimeException("User not found by id");
 		}
 	}
+
+	public User checkIn(User user, int account_id, String name, Date checkIn){
+	    RowMapper<CheckIn> checkInRowMapper = new BeanPropertyRowMapper<>(CheckIn.class);
+        String insertSql = "INSERT INTO dailycheck (id, name, checkdate) VALUES (?,?,?)";
+        String sql = "SELECT * FROM dailycheck WHERE id = ? and checkdate = ?";
+        if (jdbcTemplate.query(sql,new Object[] {account_id, checkIn}, checkInRowMapper).isEmpty()){
+            if (1 != jdbcTemplate.update(insertSql, account_id, name, checkIn)) {
+                throw new RuntimeException("Insert checkin Date error");
+            }
+        }
+        else{
+            int size = jdbcTemplate.query("SELECT * FROM dailycheck WHERE id = ?", new Object[]{account_id},checkInRowMapper).size();
+            user.setCheckedDate(size);
+        }
+
+        return user;
+    }
+
+
 }

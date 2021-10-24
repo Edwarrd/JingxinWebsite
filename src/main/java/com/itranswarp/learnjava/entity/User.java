@@ -11,23 +11,23 @@ import java.time.format.DateTimeFormatter;
 
 public class User {
 
-	private Long id;
-
+	private int id;
 	private String gender;
 	private String email;
 	private String password;
 	private String name;
 	private Date birth;
 	private String phone;
-
+	private int checkedDate;
 	private long createdAt;
 
-	public Long getId() {
+
+    public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(int account_id) {
+		this.id = account_id;
 	}
 
 	public long getCreatedAt() {
@@ -96,4 +96,12 @@ public class User {
 		return String.format("User[id=%s, email=%s, name=%s, password=%s, createdAt=%s, createdDateTime=%s]", getId(),
 				getEmail(), getName(), getPassword(), getCreatedAt(), getCreatedDateTime());
 	}
+
+    public int getCheckedDate() {
+        return checkedDate;
+    }
+
+    public void setCheckedDate(int checkedDate) {
+        this.checkedDate = checkedDate;
+    }
 }

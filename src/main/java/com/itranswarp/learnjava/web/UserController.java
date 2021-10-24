@@ -1,8 +1,11 @@
 package com.itranswarp.learnjava.web;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.SimpleFormatter;
 
 import javax.servlet.http.HttpSession;
 
@@ -33,10 +36,31 @@ public class UserController {
 		User user = (User) session.getAttribute(KEY_USER);
 		Map<String, Object> model = new HashMap<>();
 		if (user != null) {
-			model.put("user", model);
+			model.put("user", user);
 		}
-		return new ModelAndView("FrontPage-1.html", model);
+		return new ModelAndView("FrontPage-1.html",model);
 	}
+
+	@GetMapping("/checkin")
+    public ModelAndView check(HttpSession session) {
+	    User user = (User) session.getAttribute(KEY_USER);
+        if (user == null) {
+            return new ModelAndView("redirect:/signin");
+        }
+        else if (user.getCheckedDate()!=0){
+            return new ModelAndView("redirect:/", Map.of("user", user));
+        }
+        else {
+            Date checkIn = new Date(System.currentTimeMillis());
+            try {
+                user = userService.checkIn(user, user.getId(), user.getName(), checkIn);
+                session.setAttribute(KEY_USER, user);
+            } catch (RuntimeException e) {
+                return new ModelAndView("redirect:/");
+            }
+        }
+        return new ModelAndView("redirect:/checkin", Map.of("user", user));
+    }
 
 	@GetMapping("/register")
 	public ModelAndView register() {
@@ -45,7 +69,7 @@ public class UserController {
 
 	@PostMapping("/register")
 	public ModelAndView doRegister(@RequestParam("name") String name, @RequestParam("gender") String gender, @RequestParam("phone") String phone,
-								   @RequestParam("birth")Date birth, @RequestParam("password") String password) {
+								   @RequestParam("birth") Date birth, @RequestParam("password") String password) {
 		try {
 			User user = userService.register(name, gender, phone, birth, password);
 			logger.info("user registered: {}", user.getEmail());
@@ -59,7 +83,7 @@ public class UserController {
 	public ModelAndView signin(HttpSession session) {
 		User user = (User) session.getAttribute(KEY_USER);
 		if (user != null) {
-			return new ModelAndView("redirect:/profile");
+			return new ModelAndView("redirect:/user/profile");
 		}
 		return new ModelAndView("Signin.html");
 	}
@@ -76,7 +100,7 @@ public class UserController {
 		return new ModelAndView("redirect:/ ");
 	}
 
-	@GetMapping("/user/profile")
+	@GetMapping("/profile")
 	public ModelAndView profile(HttpSession session) {
 		User user = (User) session.getAttribute(KEY_USER);
 		if (user == null) {
@@ -92,7 +116,7 @@ public class UserController {
         if (user != null) {
             model.put("user", model);
         }
-        return new ModelAndView("Intro-1.html",model);
+        return new ModelAndView("Intro-1.html",Map.of("user", user));
     }
 
     @GetMapping("/activity")
